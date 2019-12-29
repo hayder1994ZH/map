@@ -1,0 +1,129 @@
+body {
+    background: #f1f1f1;
+
+}
+
+.container {
+    width: 60% !important;
+    background-color: rgb(251, 249, 249);
+    border-radius: 3px;
+}
+
+.form {
+    position: absolute;
+    top: 10%;
+    height: 55rem;
+    left: 30% !important;
+    border: 1px solid #9a7878;
+    padding: 1rem;
+    border-radius: 10px;
+    display: none;
+    background: white;
+    z-index: 99;
+
+}
+
+.navbar-main {
+    background: #53a318 !important;
+}
+
+.navbar-second {
+    background: #348700 !important;
+}
+
+.opas {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 63rem;
+    position: fixed;
+    display: none;
+    z-index: 11;
+}
+
+.inputval {
+    border: 1px solid #f5c7c7 !important;
+    border-radius: 10px !important;
+    padding-left: 1rem !important;
+    width: 90% !important;
+    margin: 1rem 1.3rem !important;
+}
+
+.btnAdd {
+    position: relative;
+    left: 210px;
+    width: 12rem;
+    border-radius: 20px;
+    border: navajowhite;
+    padding: .8rem;
+    background: #53a318;
+    color: white;
+}
+
+.btnAdd:hover {
+    opacity: 0.8;
+}
+
+.container-fluid {
+    width: 80% !important;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+.card-image {
+    cursor: pointer;
+}
+
+.colse {
+    padding: 1rem;
+}
+
+.images {
+    margin: auto;
+    border: 1px solid #dab3b3;
+    border-radius: 5px;
+    margin-top: 8rem;
+
+}
+
+.titleDetalse {
+    text-align: center;
+    padding: 1rem;
+}
+
+hr {
+    width: 67rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#notify {
+    background: #53a318;
+    text-align: center;
+    padding: 1.5rem;
+    position: relative;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    opacity: 0;
+    font-size: 2rem;
+}
+
+/* Map css */
+#map {
+    height: 23rem;
+    width: 90%;
+    border: 1px solid #f3c4c4;
+    border-radius: 5px;
+    margin-left: 4rem;
+}
+
+#nameprodect {
+    text-align: right;
+    margin-right: 4.5rem;
+}
+
+#price {
+    text-align: right;
+    margin-right: 4.5rem;
+}
+
+/* End map css*/

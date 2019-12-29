@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM2i_0zH0jUS_fZdDQ8KsfOi1bXBT17JI&libraries=places">
+    </script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>MAP</title>
+
+</head>
+
+<body>
+
+    <div class="opas"></div>
+
+    <nav class="navbar-second">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">مفاضلاتي</a></li>
+                <li><a href="#">تخفيضات%</a></li>
+                <li><a href="#">تسجيل دخول</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar-main">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">في العراق</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" id="addItem"> منتج</a></li>
+                <li><a href="#">خدمة</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="row ">
+        <form class="col s4 form">
+            <a href="" style="color:black"><i style="padding:1rem" class="material-icons">
+                    close
+                </i></a>
+            <div id="notify"></div>
+            <h4 style="text-align: center;">اضافة منتج</h4>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="اسم المنتج" id="nameProdect" type="text" class="inputval validate">
+                </div>
+            </div>
+            <div class="row">
+                <div class=" input-field col s12">
+                    <input id="price" type="number" placeholder="السعر" class="inputval validate">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="inputSearch" type="text" class="inputval validate">
+
+                    <input type="text" id="latitude" style="border-bottom: none;" class="inputval validate">
+                    <input type="text" id="longitude" style="border-bottom: none;" class="inputval validate">
+                </div>
+            </div>
+
+            <button id="btnAdd" class="btnAdd ">حفظ
+            </button>
+        </form>
+    </div>
+    <!-- <hr style="width: 100rem;"> -->
+    <div class="container-fluid">
+        <div class="row" id="cards-container">
+
+        </div>
+    </div>
+    <script>
+        //  Search_input location google maps
+        var searchInput = 'inputSearch';
+        $(document).ready(function () {
+            var autocomplete;
+            autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+                types: ['geocode']
+            });
+
+            google.maps.event.addListener(autocomplete, 'place_changed', function () {
+
+                var nearPlace = autocomplete.getPlace();
+                document.getElementById('latitude').value = nearPlace.geometry.location.lat();
+                document.getElementById('longitude').value = nearPlace.geometry.location.lng();
+                // document.getElementById('latitude').value = '33.312805';
+                // document.getElementById('longitude').value = '44.361488';
+
+            });
+        });
+        $(document).on('change', '#' + searchInput, function () {
+
+            document.getElementById('latitude').value = '';
+            document.getElementById('longitude').value = '';
+
+        });
+        // End Search_input location google maps  
+    </script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
